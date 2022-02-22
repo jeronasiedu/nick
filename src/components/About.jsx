@@ -2,19 +2,15 @@ import {
   Box,
   Flex,
   Heading,
-  HStack,
   Image,
-  Spacer,
   Text,
   useColorModeValue,
   useMediaQuery,
-  useTheme,
   VStack,
 } from '@chakra-ui/react'
 import React from 'react'
 const About = () => {
   const [mobile] = useMediaQuery('(max-width:720px)')
-  console.log(mobile)
   return (
     <Flex
       align="center"
@@ -31,7 +27,7 @@ const About = () => {
         rounded="sm"
         shadow="md"
       >
-        <Heading color="#5464ed" size="lg">
+        <Heading color="primary" size="lg">
           Who we are
         </Heading>
         <Text color="#0C5695">
@@ -47,6 +43,8 @@ const About = () => {
         h={['10rem', '12rem', '24rem']}
         w={['70%', '60%']}
         transform={mobile ? 'translateY(-0.5rem)' : 'translateX(-0.5rem)'}
+        rounded="sm"
+        overflow={'hidden'}
       >
         <Image
           src="/images/programmer.jpg"

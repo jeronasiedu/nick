@@ -50,19 +50,10 @@ const Navbar = () => {
   ]
   return (
     <>
-      <HStack w="full" p={3} px={5}>
+      <HStack w="full" p={3} px={5} as="nav">
         <Box w="5rem">
-          {colorMode === 'dark' ? (
-            <Image src="/images/logo.png" alt="Website logo" boxSize="100%" />
-          ) : (
-            <Image
-              src="/images/logo-dark.png"
-              alt="Website logo"
-              boxSize="100%"
-            />
-          )}
+          <Image src="/images/logo.png" alt="Website logo" boxSize="100%" />
         </Box>
-        {/* <Heading>Logo</Heading> */}
         <Spacer />
         <HStack d={['none', 'none', 'inline-flex']}>
           {links.map((item, key) => (
@@ -71,16 +62,11 @@ const Navbar = () => {
             </Link>
           ))}
         </HStack>
-        <IconButton
-          icon={colorMode === 'dark' ? <BiSun /> : <BiMoon />}
-          size="sm"
-          onClick={toggleColorMode}
-        />
+
         <IconButton
           icon={<HiOutlineViewGridAdd />}
           onClick={onOpen}
           d={['inline-flex', 'inline-flex', 'none']}
-          size="sm"
         />
         {/* Drawer  for mobile Devices */}
         <Drawer
