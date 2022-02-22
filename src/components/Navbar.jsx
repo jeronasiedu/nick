@@ -52,15 +52,15 @@ const Navbar = () => {
     <>
       <HStack w="full" p={3} px={5}>
         <Box w="5rem">
-          <Image
-            src={
-              colorMode === 'dark'
-                ? '/images/logo.png'
-                : '/images/logo-dark.png'
-            }
-            alt="Website logo"
-            boxSize="100%"
-          />
+          {colorMode === 'dark' ? (
+            <Image src="/images/logo.png" alt="Website logo" boxSize="100%" />
+          ) : (
+            <Image
+              src="/images/logo-dark.png"
+              alt="Website logo"
+              boxSize="100%"
+            />
+          )}
         </Box>
         {/* <Heading>Logo</Heading> */}
         <Spacer />

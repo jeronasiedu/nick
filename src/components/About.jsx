@@ -43,7 +43,7 @@ const About = () => {
         </Text>
       </VStack>
       <Box
-        bg="red"
+        bg="blue.300"
         h={['10rem', '12rem', '24rem']}
         w={['70%', '60%']}
         transform={mobile ? 'translateY(-0.5rem)' : 'translateX(-0.5rem)'}
