@@ -20,7 +20,7 @@ const theme = extendTheme({
       body: {
         bg: '#000',
       },
-      text: {
+      p: {
         color: '#fff',
       },
     },
