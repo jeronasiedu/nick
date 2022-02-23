@@ -23,12 +23,17 @@ const Portfolio = () => {
     >
       <Box
         w={['100%', '80%', '45%']}
-        bg="red"
+        bgGradient="linear(to-b,#8ec5fc 0%,#e0c3fc 100% )"
         h="20rem"
         transform={!mobile ? 'translateX(0.5rem)' : ''}
         boxShadow={!mobile ? '4px 0 4px rgba(0,0,0,0.1)' : ''}
       >
-        <Image src="/images/lady.jpg" boxSize="full" objectFit="cover" />
+        <Image
+          src="/images/test3.png"
+          boxSize="full"
+          objectFit="cover"
+          alt="A picture of a girl "
+        />
       </Box>
       <Box
         w={['90%', '70%', '40%']}
