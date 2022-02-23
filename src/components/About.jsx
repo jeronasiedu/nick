@@ -18,6 +18,7 @@ const About = () => {
       mt={3}
       direction={['column', 'column', 'row']}
       p={2}
+      id="about"
     >
       <VStack
         bg="#fff"

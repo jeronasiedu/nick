@@ -9,9 +9,15 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { BsTelephoneForward } from 'react-icons/all'
+import { Link as ScrollLink } from 'react-scroll'
 const Home = () => {
   return (
-    <Flex mt="3" alignItems="center" direction={['column', 'column', 'row']}>
+    <Flex
+      mt="3"
+      alignItems="center"
+      direction={['column', 'column', 'row']}
+      id="home"
+    >
       <VStack
         alignItems={['center', 'center', 'flex-start']}
         flex="0.5"
@@ -27,6 +33,10 @@ const Home = () => {
           w={['full', '70%']}
           variant="solid"
           colorScheme={'facebook'}
+          as={ScrollLink}
+          to="contact"
+          spy={true}
+          smooth={true}
           rounded="sm"
           rightIcon={<BsTelephoneForward />}
         >

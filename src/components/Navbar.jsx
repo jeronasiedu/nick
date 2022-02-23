@@ -1,12 +1,10 @@
 import {
-  Heading,
   HStack,
   IconButton,
   Image,
   Link,
   Spacer,
   Text,
-  useColorMode,
   Drawer,
   DrawerBody,
   DrawerFooter,
@@ -15,49 +13,75 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Button,
   VStack,
   Divider,
   Box,
 } from '@chakra-ui/react'
-import { BiMoon, BiSun, HiOutlineViewGridAdd } from 'react-icons/all'
+import { Link as ScrollLink } from 'react-scroll'
+import { HiOutlineViewGridAdd } from 'react-icons/all'
 import { useRef } from 'react'
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
   const links = [
     {
       name: 'Home',
-      url: '#',
+      url: 'home',
     },
     {
       name: 'About',
-      url: '#',
+      url: 'about',
     },
     {
       name: 'Services',
-      url: '#',
+      url: 'services',
     },
     {
       name: 'Portfolio',
-      url: '#',
+      url: 'portfolio',
     },
     {
       name: 'Contact',
-      url: '#',
+      url: 'contact',
     },
   ]
+  const handleActive = (to) => {
+    console.log('active', to)
+  }
+  const handleInActive = (to) => {
+    console.log('In Active', to)
+  }
   return (
     <>
-      <HStack w="full" p={3} px={5} as="nav">
+      <HStack
+        w="full"
+        p={3}
+        px={5}
+        as="nav"
+        pos="sticky"
+        top="0"
+        left="0"
+        bg="#000"
+        shadow="sm"
+        zIndex={1000}
+      >
         <Box w="5rem">
           <Image src="/images/logo.png" alt="Website logo" boxSize="100%" />
         </Box>
         <Spacer />
-        <HStack d={['none', 'none', 'inline-flex']}>
+        <HStack d={['none', 'none', 'inline-flex']} spacing={4}>
           {links.map((item, key) => (
-            <Link href={item.href} key={key} fontSize="lg">
+            <Link
+              key={key}
+              fontSize="lg"
+              as={ScrollLink}
+              smooth={true}
+              to={item.url}
+              spy={true}
+              activeClass="activeLink"
+              isDynamic={true}
+              offset={-60}
+            >
               {item.name}
             </Link>
           ))}
@@ -82,7 +106,17 @@ const Navbar = () => {
             <DrawerBody>
               <VStack>
                 {links.map((item, key) => (
-                  <Link href={item.href} key={key}>
+                  <Link
+                    key={key}
+                    as={ScrollLink}
+                    smooth={true}
+                    to={item.url}
+                    activeClass="activeLink"
+                    onClick={onClose}
+                    offset={-60}
+                    isDynamic={true}
+                    spy={true}
+                  >
                     {item.name}
                   </Link>
                 ))}

@@ -1,6 +1,7 @@
 import { Container } from '@chakra-ui/react'
 import About from './components/About'
 import Business from './components/Business'
+import Contact from './components/Contact'
 import Home from './components/Home'
 import Industries from './components/Industries'
 import Navbar from './components/Navbar'
@@ -21,6 +22,7 @@ function App() {
         <Industries />
         <Testimonial />
         <Portfolio />
+        <Contact />
       </Container>
     </>
   )

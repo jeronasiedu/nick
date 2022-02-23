@@ -11,7 +11,6 @@ import {
 import { BiChevronRight } from 'react-icons/all'
 const Portfolio = () => {
   const [mobile] = useMediaQuery('(max-width:720px)')
-  console.log(mobile)
   return (
     <Stack
       w="full"
@@ -20,6 +19,7 @@ const Portfolio = () => {
       spacing="0"
       justifyContent="center"
       alignItems="center"
+      id="portfolio"
     >
       <Box
         w={['100%', '80%', '45%']}
