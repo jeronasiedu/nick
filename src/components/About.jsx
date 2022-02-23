@@ -47,7 +47,7 @@ const About = () => {
         overflow={'hidden'}
       >
         <Image
-          src="/images/programmer.jpg"
+          src="/images/programming-desk.jpg"
           alt="A picture of a programmer"
           boxSize="full"
           objectFit="cover"

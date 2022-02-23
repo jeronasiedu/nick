@@ -4,8 +4,10 @@ import Business from './components/Business'
 import Home from './components/Home'
 import Industries from './components/Industries'
 import Navbar from './components/Navbar'
+import Portfolio from './components/Portfolio'
 import Projects from './components/Projects'
 import Services from './components/Services'
+import Testimonial from './components/Testimonial'
 function App() {
   return (
     <>
@@ -17,6 +19,8 @@ function App() {
         <Projects />
         <Business />
         <Industries />
+        <Testimonial />
+        {/* <Portfolio /> */}
       </Container>
     </>
   )
