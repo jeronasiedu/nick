@@ -20,7 +20,7 @@ function App() {
         <Business />
         <Industries />
         <Testimonial />
-        {/* <Portfolio /> */}
+        <Portfolio />
       </Container>
     </>
   )
