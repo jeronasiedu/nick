@@ -65,6 +65,7 @@ const Industries = () => {
         placeItems="center"
         w="full"
         spacing={3}
+        spacingX={['-0.5', '0', '3']}
       >
         {industries.map((item, key) => (
           <Box
