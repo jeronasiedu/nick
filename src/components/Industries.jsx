@@ -67,10 +67,18 @@ const Industries = () => {
         spacing={3}
       >
         {industries.map((item, key) => (
-          <Box w="full" maxW="22rem" p={4} bg="white" key={key} rounded="sm">
+          <Box
+            w={['90%', '95%', 'full']}
+            maxW="20rem"
+            p="2"
+            bg="white"
+            key={key}
+            rounded="sm"
+            minH="7rem"
+          >
             <VStack>
-              <Image src={item.image} w={['6rem', '7rem', '8rem']} />
-              <Text size="lg" color="#000">
+              <Image src={item.image} w={['4rem', '5rem', '7rem']} />
+              <Text fontSize={['sm', 'md', 'lg']} color="#000">
                 {item.name}
               </Text>
             </VStack>

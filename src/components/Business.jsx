@@ -36,7 +36,7 @@ const Business = () => {
         placeItems={'center'}
       >
         {business.map((item, key) => (
-          <CardGrid {...item} key={key} h="25%" />
+          <CardGrid {...item} key={key} w="35%" />
         ))}
       </SimpleGrid>
     </VStack>
