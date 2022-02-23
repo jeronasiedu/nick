@@ -13,7 +13,7 @@ import { Link as ScrollLink } from 'react-scroll'
 const Home = () => {
   return (
     <Flex
-      mt="3"
+      my="2rem"
       alignItems="center"
       direction={['column', 'column', 'row']}
       id="home"

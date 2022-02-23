@@ -1,22 +1,15 @@
-import {
-  Box,
-  Heading,
-  Image,
-  Text,
-  useColorModeValue,
-  VStack,
-} from '@chakra-ui/react'
+import { Box, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 const CardGrid = ({ image, name, desc, h }) => {
   return (
     <Box
       as={motion.div}
       w="full"
-      p={['0', '0', '2']}
+      p="2"
       maxW={['auto', 'auto', '20rem']}
       shadow="sm"
       bg="#fff"
-      minH="21rem"
+      minH="20rem"
       rounded="sm"
       whileHover={{
         y: -8,
@@ -35,7 +28,7 @@ const CardGrid = ({ image, name, desc, h }) => {
             alt={name}
             boxSize="full"
             objectFit="cover"
-            w="60%"
+            w="50%"
           />
         </Box>
         <Heading size="md" color="secondary" textAlign="center">

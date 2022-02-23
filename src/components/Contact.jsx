@@ -30,7 +30,7 @@ const Contact = () => {
     },
   ]
   return (
-    <VStack my={'3rem'} id="contact">
+    <VStack my={'2rem'} id="contact">
       <Heading size="md" as="h3" color="primary">
         Our Contacts
       </Heading>

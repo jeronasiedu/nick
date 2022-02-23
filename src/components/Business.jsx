@@ -20,7 +20,7 @@ const Business = () => {
     },
   ]
   return (
-    <VStack mt={'4rem'} id="services">
+    <VStack my={'2rem'} id="services">
       <Heading
         size="lg"
         as="h3"

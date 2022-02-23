@@ -15,9 +15,8 @@ const About = () => {
     <Flex
       align="center"
       w="full"
-      mt={3}
+      my={'2rem'}
       direction={['column', 'column', 'row']}
-      p={2}
       id="about"
     >
       <VStack

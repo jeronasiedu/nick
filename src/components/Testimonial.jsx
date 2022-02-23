@@ -30,7 +30,7 @@ const Testimonial = () => {
     },
   ]
   return (
-    <VStack my={3}>
+    <VStack my={'2rem'}>
       <Heading as="h3" color="#BBCEF3" textAlign={['center', 'center', 'left']}>
         Testimonies
       </Heading>

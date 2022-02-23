@@ -15,7 +15,7 @@ const Portfolio = () => {
     <Stack
       w="full"
       direction={['column', 'column', 'row']}
-      my="3rem"
+      my="2rem"
       spacing="0"
       justifyContent="center"
       alignItems="center"

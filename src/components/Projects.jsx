@@ -32,7 +32,7 @@ const Projects = () => {
       minChildWidth={['270px', '250px']}
       w="full"
       placeItems={'center'}
-      my={3}
+      my="2rem"
     >
       {projects.map((item, key) => (
         <Box

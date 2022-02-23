@@ -52,7 +52,7 @@ const Industries = () => {
     },
   ]
   return (
-    <VStack my={'3rem'}>
+    <VStack my={'2rem'}>
       <Heading as="h3" color="#BBCEF3" textAlign={['center', 'center', 'left']}>
         Industries we serve
       </Heading>
