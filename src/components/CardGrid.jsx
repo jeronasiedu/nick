@@ -12,11 +12,11 @@ const CardGrid = ({ image, name, desc, h }) => {
     <Box
       as={motion.div}
       w="full"
-      maxW="20rem"
-      p={2}
+      p={['0', '0', '2']}
+      maxW={['auto', 'auto', '20rem']}
       shadow="sm"
       bg="#fff"
-      minH="24rem"
+      minH="21rem"
       rounded="sm"
       whileHover={{
         y: -8,
@@ -35,13 +35,15 @@ const CardGrid = ({ image, name, desc, h }) => {
             alt={name}
             boxSize="full"
             objectFit="cover"
-            w="80%"
+            w="60%"
           />
         </Box>
         <Heading size="md" color="secondary" textAlign="center">
           {name}
         </Heading>
-        <Text color="#000">{desc}</Text>
+        <Text color="#000" textAlign="center">
+          {desc}
+        </Text>
       </VStack>
     </Box>
   )

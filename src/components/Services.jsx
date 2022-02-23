@@ -26,7 +26,7 @@ const Services = () => {
   ]
 
   return (
-    <VStack mt={'3rem'} p={2}>
+    <VStack mt={'3rem'}>
       <Heading size="md" as="h3" color="primary">
         Our Values
       </Heading>
