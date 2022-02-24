@@ -14,19 +14,19 @@ const Testimonial = () => {
       test: 'I have loved my experience with Adooba. They have an amazing team and they deliver on time too',
       author: 'Emmanuel F. Bonney',
       position: 'CEO, Emcee Multimedia',
-      image: '/images/test1.jpg',
+      image: '/images/ceo.jpg',
     },
     {
       test: 'They are very active and  supportive. Communication is easy and  fast. Sometimes they extend extra mile just to satisfy their clients needs',
       author: 'Apostle Amen',
       position: 'Founder, BCRM International',
-      image: '/images/review3.jpg',
+      image: '/images/pastor.jpg',
     },
     {
       test: 'Excellent work from  an experienced team. Highly recommended for their knowledge, design skill base and reliability. A honest and reputable company',
-      author: 'Coach Oti-Akenteng',
-      position: 'Former G.F.A Technical Coach',
-      image: '/images/review6.jpg',
+      author: 'Mr. Enoch Aquah',
+      position: 'MD. Unique services Ghana',
+      image: '/images/enoch.jpg',
     },
   ]
   return (
@@ -79,7 +79,7 @@ const Testimonial = () => {
                   h={['4rem', '5rem', '5.5rem']}
                   rounded="full"
                   overflow="hidden"
-                  bg="red"
+                  bg="blue.400"
                   shadow="lg"
                   border="4px"
                   borderColor="blue.400"

@@ -1,5 +1,7 @@
 import { Box, Heading, Image, SimpleGrid, Text, VStack } from '@chakra-ui/react'
-
+import { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 const Industries = () => {
   const industries = [
     {
@@ -51,12 +53,68 @@ const Industries = () => {
       image: '/images/hotel.png',
     },
   ]
+  const homeVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.2,
+      },
+    },
+  }
+  const childVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+    },
+  }
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('exit')
+    }
+  }, [controls, inView])
   return (
-    <VStack my={'2rem'}>
-      <Heading as="h3" color="#BBCEF3" textAlign={['center', 'center', 'left']}>
+    <VStack
+      my={'2rem'}
+      as={motion.div}
+      animate={controls}
+      ref={ref}
+      initial="hidden"
+      variants={homeVariant}
+    >
+      <Heading
+        as="h3"
+        color="#BBCEF3"
+        textAlign={['center', 'center', 'left']}
+        as={motion.h1}
+        variants={childVariant}
+      >
         Industries we serve
       </Heading>
-      <Text color="#fff" fontSize="lg" textAlign="center">
+      <Text
+        color="#fff"
+        fontSize="lg"
+        textAlign="center"
+        as={motion.p}
+        variants={childVariant}
+      >
         We help our clients across diverse industries rapidly navigate
         technology changes and drive digital transformation
       </Text>
@@ -66,6 +124,8 @@ const Industries = () => {
         w="full"
         spacing={3}
         spacingX={['-0.5', '0', '3']}
+        as={motion.div}
+        variants={homeVariant}
       >
         {industries.map((item, key) => (
           <Box
@@ -75,6 +135,8 @@ const Industries = () => {
             bg="white"
             key={key}
             rounded="sm"
+            as={motion.div}
+            variants={childVariant}
             minH="7rem"
           >
             <VStack>

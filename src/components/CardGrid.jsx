@@ -1,9 +1,24 @@
 import { Box, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 const CardGrid = ({ image, name, desc, w }) => {
+  const childVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+    },
+  }
   return (
     <Box
       as={motion.div}
+      variants={childVariant}
       w="full"
       p="2"
       maxW={['auto', 'auto', '20rem']}

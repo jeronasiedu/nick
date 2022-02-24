@@ -25,7 +25,7 @@ const Footer = () => {
     >
       <HStack>
         {links.map((item, key) => (
-          <Link href={item.url} isExternal>
+          <Link href={item.url} isExternal key={key}>
             <Image
               src={item.icon}
               alt="twitter image"
@@ -37,7 +37,7 @@ const Footer = () => {
       <Stack fontSize="xl" direction={['column', 'column', 'row']}>
         <Flex align="center" gap="1">
           <BiCopyright size="22" />
-          <Text fontSize="xl">
+          <Text fontSize={['lg', 'lg', 'xl']}>
             Copyright{' '}
             <span
               style={{
@@ -48,7 +48,7 @@ const Footer = () => {
             </span>
           </Text>
         </Flex>
-        <Text fontSize="xl">All Rights Reserved {date} </Text>
+        <Text fontSize={['lg', 'lg', 'xl']}>All Rights Reserved {date} </Text>
       </Stack>
     </Stack>
   )

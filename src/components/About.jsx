@@ -4,13 +4,51 @@ import {
   Heading,
   Image,
   Text,
-  useColorModeValue,
   useMediaQuery,
   VStack,
 } from '@chakra-ui/react'
-import React from 'react'
+import { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 const About = () => {
   const [mobile] = useMediaQuery('(max-width:720px)')
+  const homeVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.5,
+      },
+    },
+  }
+  const childVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+    },
+  }
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('exit')
+    }
+  }, [controls, inView])
   return (
     <Flex
       align="center"
@@ -18,6 +56,11 @@ const About = () => {
       my={'2rem'}
       direction={['column', 'column', 'row']}
       id="about"
+      ref={ref}
+      as={motion.div}
+      animate={controls}
+      initial="hidden"
+      variants={homeVariant}
     >
       <VStack
         bg="#fff"
@@ -27,14 +70,26 @@ const About = () => {
         rounded="sm"
         shadow="md"
         alignItems="flex-start"
+        as={motion.div}
+        variants={homeVariant}
       >
-        <Heading color="primary" size="lg">
+        <Heading
+          color="primary"
+          size="lg"
+          as={motion.h1}
+          variants={childVariant}
+        >
           Who we are
         </Heading>
-        <Text color="#0C5695" fontSize="lg">
-          Adoba is a creative IT solution provider and business consulting firm
+        <Text
+          color="#0C5695"
+          fontSize="lg"
+          as={motion.p}
+          variants={childVariant}
+        >
+          Adooba is a creative IT solution provider and business consulting firm
         </Text>
-        <Text color="#000">
+        <Text color="#000" as={motion.p} variants={childVariant}>
           The business is established with enthusiasm and determination to
           redefine the prospect of support for IT in Africa and the world
         </Text>
@@ -46,6 +101,8 @@ const About = () => {
         transform={mobile ? 'translateY(-0.5rem)' : 'translateX(-0.5rem)'}
         rounded="sm"
         overflow={'hidden'}
+        as={motion.div}
+        variants={childVariant}
       >
         <Image
           src="/images/boy.jpg"
