@@ -85,7 +85,7 @@ const Contact = () => {
             boxShadow={!mobile ? '-4px 0 4px rgba(0,0,0,0.1)' : ''}
           >
             <Image
-              src="/images/girl.jpeg"
+              src="/images/contact.jpg"
               boxSize="full"
               objectFit="cover"
               alt="A picture of a girl "

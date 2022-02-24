@@ -4,11 +4,11 @@ import {
   Flex,
   Heading,
   Image,
-  Stack,
   Text,
   VStack,
+  chakra,
 } from '@chakra-ui/react'
-import { BsTelephoneForward } from 'react-icons/all'
+import { ImArrowRight2 } from 'react-icons/all'
 import { Link as ScrollLink } from 'react-scroll'
 const Home = () => {
   return (
@@ -29,19 +29,34 @@ const Home = () => {
         <Text textAlign={['center', 'left']}>
           We are a creative firm helping your business grow
         </Text>
-        <Button
-          w={['full', '70%']}
-          variant="solid"
-          colorScheme={'facebook'}
+
+        <chakra.button
           as={ScrollLink}
           to="contact"
           spy={true}
           smooth={true}
+          cursor="pointer"
+          fontSize="lg"
+          bg="white"
+          color="#000"
+          px={'1rem'}
+          py="0.5rem"
+          fontFamily="inherit"
           rounded="sm"
-          rightIcon={<BsTelephoneForward />}
+          w="50%"
+          d="flex"
+          alignItems="center"
+          justifyContent="space-around"
+          _hover={{
+            bg: '#ffffffcf',
+          }}
+          _focus={{
+            border: '2px solid blue.600',
+          }}
         >
-          Let's talk
-        </Button>
+          <span>Talk to us now</span>
+          <ImArrowRight2 />
+        </chakra.button>
       </VStack>
       <Box flex="0.5">
         <Image

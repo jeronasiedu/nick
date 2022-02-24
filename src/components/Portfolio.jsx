@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   VStack,
 } from '@chakra-ui/react'
-import { BiChevronRight } from 'react-icons/all'
+import { ImArrowRight2 } from 'react-icons/all'
 const Portfolio = () => {
   const [mobile] = useMediaQuery('(max-width:720px)')
   return (
@@ -29,7 +29,7 @@ const Portfolio = () => {
         boxShadow={!mobile ? '4px 0 4px rgba(0,0,0,0.1)' : ''}
       >
         <Image
-          src="/images/test3.png"
+          src="/images/black-girl.jpg"
           boxSize="full"
           objectFit="cover"
           alt="A picture of a girl "
@@ -52,10 +52,10 @@ const Portfolio = () => {
             display
           </Text>
           <Button
-            rightIcon={<BiChevronRight size={22} />}
+            rightIcon={<ImArrowRight2 size={22} />}
             rounded="sm"
             color="#4153F1"
-            variant="outline"
+            variant="ghost"
           >
             Click Here
           </Button>

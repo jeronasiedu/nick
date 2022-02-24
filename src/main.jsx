@@ -6,6 +6,10 @@ import '@fontsource/nunito-sans'
 import { ChakraProvider, extendTheme, ColorModeScript } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
   fonts: {
     body: 'nunito-sans, sans-serif',
     heading: 'nunito-sans, sans-serif',
@@ -29,7 +33,7 @@ const theme = extendTheme({
 })
 ReactDOM.render(
   <ChakraProvider theme={theme}>
-    <ColorModeScript initialColorMode="dark" />
+    <ColorModeScript initialColorMode="dark"></ColorModeScript>
     <App />
   </ChakraProvider>,
   document.getElementById('root')

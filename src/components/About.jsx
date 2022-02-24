@@ -26,11 +26,12 @@ const About = () => {
         py={['3', '3', '10']}
         rounded="sm"
         shadow="md"
+        alignItems="flex-start"
       >
         <Heading color="primary" size="lg">
           Who we are
         </Heading>
-        <Text color="#0C5695">
+        <Text color="#0C5695" fontSize="lg">
           Adoba is a creative IT solution provider and business consulting firm
         </Text>
         <Text color="#000">
@@ -47,7 +48,7 @@ const About = () => {
         overflow={'hidden'}
       >
         <Image
-          src="/images/programming-desk.jpg"
+          src="/images/boy.jpg"
           alt="A picture of a programmer"
           boxSize="full"
           objectFit="cover"

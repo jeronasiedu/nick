@@ -78,7 +78,7 @@ const Industries = () => {
             minH="7rem"
           >
             <VStack>
-              <Image src={item.image} w={['4rem', '5rem', '7rem']} />
+              <Image src={item.image} w={['4rem', '4.5rem', '5rem']} />
               <Text fontSize={['sm', 'md', 'lg']} color="#000">
                 {item.name}
               </Text>

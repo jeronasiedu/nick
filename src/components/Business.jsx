@@ -5,18 +5,18 @@ const Business = () => {
   const business = [
     {
       image: '/images/ux.png',
-      name: 'Website Design & Management',
+      name: 'Web Development & Management',
       desc: 'Web development, Web hosting, Website Management, Web app development, SEO and more',
     },
     {
       image: '/images/apps.png',
-      name: 'Website Design & Management',
+      name: 'App Development & Management',
       desc: 'Native IOS apps, Native android apps, crossPlatforms',
     },
     {
       image: '/images/web-design.png',
-      name: 'Website Design & Management',
-      desc: 'Web development, Web hosting, Website Management, Web app development, SEO and more',
+      name: 'Graphic Design & UX Design',
+      desc: 'Corporate Design, Interface Design, Mockup, Publishing, Advertisement',
     },
   ]
   return (

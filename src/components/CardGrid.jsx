@@ -34,7 +34,7 @@ const CardGrid = ({ image, name, desc, w }) => {
         <Heading size="md" color="secondary" textAlign="center">
           {name}
         </Heading>
-        <Text color="#000" textAlign="center">
+        <Text color="#000" textAlign="center" fontSize="lg">
           {desc}
         </Text>
       </VStack>

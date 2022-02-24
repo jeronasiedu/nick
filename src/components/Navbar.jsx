@@ -4,21 +4,20 @@ import {
   Image,
   Link,
   Spacer,
-  Text,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
   useDisclosure,
-  VStack,
   Divider,
   Box,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from '@chakra-ui/react'
 import { Link as ScrollLink } from 'react-scroll'
-import { HiOutlineViewGridAdd } from 'react-icons/all'
+import { BiMenu } from 'react-icons/all'
 import { useRef } from 'react'
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -45,12 +44,6 @@ const Navbar = () => {
       url: 'contact',
     },
   ]
-  const handleActive = (to) => {
-    console.log('active', to)
-  }
-  const handleInActive = (to) => {
-    console.log('In Active', to)
-  }
   return (
     <>
       <HStack
@@ -87,46 +80,34 @@ const Navbar = () => {
           ))}
         </HStack>
 
-        <IconButton
-          icon={<HiOutlineViewGridAdd />}
-          onClick={onOpen}
-          d={['inline-flex', 'inline-flex', 'none']}
-        />
-        {/* Drawer  for mobile Devices */}
-        <Drawer
-          isOpen={isOpen}
-          placement="right"
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Welcome to Adoba</DrawerHeader>
-            <DrawerBody>
-              <VStack>
-                {links.map((item, key) => (
-                  <Link
-                    key={key}
-                    as={ScrollLink}
-                    smooth={true}
-                    to={item.url}
-                    activeClass="activeLink"
-                    onClick={onClose}
-                    offset={-60}
-                    isDynamic={true}
-                    spy={true}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </VStack>
-            </DrawerBody>
-            <DrawerFooter>
-              <Text>Social Links goes here</Text>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            icon={<BiMenu />}
+            d={['inline-flex', 'inline-flex', 'none']}
+            bg="blackAlpha.600"
+            border="1px"
+            borderColor="gray.700"
+          ></MenuButton>
+          <MenuList bg="#1f1f25" borderColor="#16161b">
+            {links.map((item, key) => (
+              <MenuItem key={key}>
+                <ScrollLink
+                  to={item.url}
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  activeClass="activeLink"
+                  style={{
+                    width: '100%',
+                  }}
+                >
+                  {item.name}
+                </ScrollLink>
+              </MenuItem>
+            ))}
+          </MenuList>
+        </Menu>
       </HStack>
       <Divider />
     </>
