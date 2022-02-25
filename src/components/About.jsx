@@ -87,7 +87,7 @@ const About = () => {
           as={motion.p}
           variants={childVariant}
         >
-          Adooba is a creative IT solution provider and consulting firm
+          Adooba is a creative IT solution provider
         </Text>
         <Text color="#000" as={motion.p} variants={childVariant}>
           The business is established with enthusiasm and determination to
