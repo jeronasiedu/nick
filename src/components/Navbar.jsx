@@ -58,7 +58,15 @@ const Navbar = () => {
         shadow="sm"
         zIndex={1000}
       >
-        <Box w="5rem">
+        <Box
+          w="5rem"
+          as={ScrollLink}
+          to="home"
+          spy={true}
+          smooth={true}
+          cursor="pointer"
+          offset={-60}
+        >
           <Image src="/images/logo.png" alt="Website logo" boxSize="100%" />
         </Box>
         <Spacer />
